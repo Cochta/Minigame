@@ -11,6 +11,7 @@ enum class MonsterRace
 class Monster
 {
 public:
+	Monster();
 	Monster(MonsterRace, float hp, float ad, float dp, float s);
 
 	MonsterRace GetRace() { return Race; }
@@ -25,7 +26,7 @@ public:
 	void SetDP(float dp) { DP = dp; }
 	void SetS(float s) { S = s; }
 
-	void Attack(Monster& attackedMonster);
+	void Attack(Monster& attackedMonster); // calculated using this attack - attackedmonster defense
 
 	std::string MonsterRaceToString();
 	std::string ToString();
@@ -37,6 +38,6 @@ private:
 	float HP; // Health Points
 	float AD; // Attack Damage
 	float DP; // Defense Points
-	float S;  // Speed
+	float S;  // Speed, used to determine initiativ
 };
 

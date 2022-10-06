@@ -2,6 +2,11 @@
 
 #include <iostream>
 
+Monster::Monster()
+{
+
+}
+
 Monster::Monster(MonsterRace race, float hp, float ad, float dp, float s)
 {
 	Race = race;
