@@ -10,9 +10,12 @@ int main()
 	Monster playerMonster = CreateMonster(); // the user creates his own monster
 
 	std::cout << std::endl << "Choose your oponnent !" << std::endl;
-	for (auto monster : monsters)
+	for (auto& monster : monsters)
 	{
-		PrintMonster(monster);
+		if (monster.GetRace() != playerMonster.GetRace())
+		{
+			PrintMonster(monster);
+		}
 	}
 
 	Fight(playerMonster, ReturnMonsterByRace(monsters, ChooseMonsterRace())); // user choose the oponnent

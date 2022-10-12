@@ -11,7 +11,7 @@ bool IsSameRace(Monster m1, Monster m2) // return true if monster are f same rac
 
 bool AbleToFight(Monster m1, Monster m2) // return true if min 1 monster can take damages
 {
-	return m1.GetAD() - m2.GetDP() > 0 || m2.GetAD() - m1.GetDP() > 0;
+	return (m1.GetAD() - m2.GetDP()) > 0 || (m2.GetAD() - m1.GetDP()) > 0;
 }
 
 void PrintMonster(Monster m)
@@ -48,7 +48,7 @@ void Fight(Monster& m1, Monster m2)
 			while (m1.GetHP() > 0 && m2.GetHP() > 0)
 			{
 				attacker->Attack(*deffender);
-				//Sleep(1000);
+				Sleep(1000);
 				if (deffender->GetHP() <= 0)
 				{
 					break;

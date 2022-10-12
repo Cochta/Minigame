@@ -24,7 +24,7 @@ MonsterRace ChooseMonsterRace()
 			return MonsterRace::Goblin;
 		else if (monster == "troll")
 			return MonsterRace::Troll;
-		std::cout << "Invalid input.  Try again: ";
+		std::cout << "Invalid input, (races accepted: orc, troll, goblin)  Try again: ";
 	}
 }
 
@@ -44,7 +44,7 @@ float EnterValue(std::string _waitedValue)
 	while (!(std::cin >> value)) {// allows the user to only input numerical values
 		std::cin.clear();
 		std::cin.ignore(1000, '\n');
-		std::cout << "Invalid input.  Try again: ";
+		std::cout << "Invalid input, (it must be a number)  Try again: ";
 	}
 	return value;
 }
@@ -64,10 +64,11 @@ Monster CreateMonster()
 {
 	std::cout << "Create your monster !" << std::endl;
 	MonsterRace playerRace = ChooseMonsterRace();
-	float playerHP = EnterValue("HP");
-	float playerAD = EnterValue("AD");
-	float playerDP = EnterValue("DP");
-	float playerS = EnterValue("S");
+	float playerHP = EnterValue("Health Points");
+	float playerAD = EnterValue("Attack Damage");
+	float playerDP = EnterValue("Defense Points");
+	float playerS = EnterValue("Speed");
 	Monster playerMonster(playerRace, playerHP, playerAD, playerDP, playerS);
+	system("cls");
 	return playerMonster;
 }
